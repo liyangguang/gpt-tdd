@@ -4,6 +4,7 @@ import { myFunction } from '../output/result';
 
 test('GPT TDD', () => {
   // [User TODO]: Write all tests for the myFunctiontion you want.
+  // (Remove these example tests)
   expect(myFunction(1, 1)).toBe(2);
   expect(myFunction(3, 4)).toBe(7);
   expect(myFunction(100, 900)).toBe(1000);
