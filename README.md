@@ -20,6 +20,8 @@ Write what you expect the code to do, GPT generate code to pass all your tests.
 
 ## How to use it
 
+![screen recording the steps](./screen_recording.gif)
+
 0. Create a `.env` based on `.example.env`, and add your OpenAPI API key.
 1. Open `/tests/index.test.ts`, and write any tests you want for your function.
 1. Optionally, you can go to `/gpt/index.ts` to tweak the 2 parameters.
