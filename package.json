@@ -15,7 +15,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "start": "npx vite-node src/gpt/main.ts",
+    "start": "npx vite-node src/gpt/index.ts",
     "test": "vitest run"
   },
   "devDependencies": {

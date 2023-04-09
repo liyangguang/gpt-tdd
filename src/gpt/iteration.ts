@@ -1,9 +1,11 @@
-import { ask } from './openai';
-import { runTest } from './run_test';
-import {readCode, writeCode} from './file';
 import chalk from 'chalk';
 
-export default async function(verboseLog = false): Promise<boolean> {
+import { initCode } from './file';
+import { ask } from './openai';
+import { runTest } from './run_test';
+import { readCode, writeCode } from './file';
+
+async function runIteration(verboseLog = false): Promise<boolean> {
   console.info(chalk.yellow('[Running tests]'));
   const {failure, allPassed} = await runTest();
   if (allPassed) return true;;
@@ -16,4 +18,25 @@ export default async function(verboseLog = false): Promise<boolean> {
   console.info(chalk.yellow('[Updating code]'));
   writeCode(response);
   return false;
+}
+
+
+export default async function (MAX_ITERATIONS: number, verboseLog = false) {
+  initCode();
+
+  let iterationCount = 0;
+  let isSuccessful = false;
+
+  while(iterationCount < MAX_ITERATIONS) {
+    const allPassed = await runIteration(verboseLog);
+    if (allPassed) {
+      isSuccessful = true;
+      console.info(chalk.green('[All finished!] Check the code in `/src/output/result.ts`.'));
+      break;
+    }
+    iterationCount ++;
+  }
+  if (!isSuccessful) {
+    console.info(chalk.red('[Failed to pass all tests after max iterations] Check the current result in `/src/output/result.ts`.'));
+  }
 }

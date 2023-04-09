@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const TARGET_FILE = path.join(__dirname, '..', 'result', 'index.ts');
+const TARGET_FILE = path.join(__dirname, '..', 'output', 'result.ts');
 
 export function initCode(): void {
   writeCode(`
