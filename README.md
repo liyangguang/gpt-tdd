@@ -1,4 +1,4 @@
-# Self-running GPT TDD
+# GPT TDD
 
 An experiment to use GPT on [Test-Driven-Development](https://en.wikipedia.org/wiki/Test-driven_development). The expected result is the code can complete itself given the tests.
 
@@ -15,3 +15,9 @@ An experiment to use GPT on [Test-Driven-Development](https://en.wikipedia.org/w
   - `/gpt`: The core of this repo. Contains code that does the auto TDD.
   - `/tests`: The tests to pass.
   - `/result`: The result code from GPT. It starts with an empty file.
+
+## How to run
+
+1. Write tests in `/tests/`, where you import files from `../result` as if they are already there.
+1. Run `npm start` to let the program run the process described above.
+1. After it's finished, you should have a `/result/index.ts` ready that passes all tests.

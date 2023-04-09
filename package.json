@@ -1,5 +1,5 @@
 {
-  "name": "self-running-gpt-tdd",
+  "name": "gpt-tdd",
   "description": "Use GPT on Test-Driven-Development to automate coding",
   "keywords": [
     "gpt",
@@ -7,14 +7,15 @@
     "tdd"
   ],
   "author": "Yangguang Li <liyangguangcn@gmail.com> (https://liyangguang.com/)",
-  "homepage": "https://github.com/liyangguang/self-running-gpt-tdd#readme",
+  "homepage": "https://github.com/liyangguang/gpt-tdd#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/liyangguang/self-running-gpt-tdd"
+    "url": "https://github.com/liyangguang/gpt-tdd"
   },
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "start": "npx vite-node src/gpt/main.ts",
     "test": "vitest"
   },
   "devDependencies": {
