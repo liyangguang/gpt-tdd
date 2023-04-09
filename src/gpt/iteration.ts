@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 
 import { initCode } from './file';
-import { ask } from './openai';
+import { ask, checkResponse } from './openai';
 import { runTest } from './run_test';
 import { readCode, writeCode } from './file';
 
@@ -14,6 +14,11 @@ async function runIteration(verboseLog = false): Promise<boolean> {
   console.info(chalk.yellow('[Test failed. Asking GPT]'));
   const currentCode = readCode();
   const response = await ask(failure!, currentCode);
+  const responseType = await checkResponse(response);
+  if (responseType.toLowerCase().trim() !== 'code') {
+    console.info(chalk.yellow(`[Failed to fix] ${response}`));
+    return false;
+  }
   if (verboseLog) console.info(chalk.white(response));
   console.info(chalk.yellow('[Updating code]'));
   writeCode(response);
