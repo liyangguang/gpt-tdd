@@ -1,9 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
-const TARGET_FILE = path.join(__dirname, '..', 'output', 'result.ts');
+const DIR_PATH = path.join(__dirname, '..', 'output');
+const FILE_PATH = path.join(DIR_PATH, 'result.ts');
 
 export function initCode(): void {
+  if (!fs.existsSync(DIR_PATH)) {
+    fs.mkdirSync(DIR_PATH);
+  }
+
   writeCode(`
 export function myFunction() {
   
@@ -12,9 +17,9 @@ export function myFunction() {
 }
 
 export function readCode(): string {
-  return fs.readFileSync(TARGET_FILE, 'utf8');
+  return fs.readFileSync(FILE_PATH, 'utf8');
 }
 
 export function writeCode(content: string): void {
-  fs.writeFileSync(TARGET_FILE, content, 'utf8');
+  fs.writeFileSync(FILE_PATH, content, 'utf8');
 }
