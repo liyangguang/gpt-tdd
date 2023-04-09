@@ -11,7 +11,7 @@ export function runTest(): Promise<{allPassed: boolean, failure?: string}> {
       }
     
       if (stdout) {
-        resolve({allPassed: false});
+        resolve({allPassed: true});
       }
     });    
   });

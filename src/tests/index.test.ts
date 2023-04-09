@@ -1,12 +1,9 @@
 import { expect, test } from 'vitest';
-// Add any methods you want to have in the result, pretending they do exist.
-import {add} from '../result';
+import { myFunction } from '../result';
 
-// Write all tests for it.
-test('TDD tests', () => {
-  expect(add(3, 4)).toBe(7);
-});
-
-test('TDD tests', () => {
-  expect(add(1, 1)).toBe(2);
+test('GPT TDD', () => {
+  // Write all tests for the myFunctiontion you want.
+  expect(myFunction(1, 1)).toBe(2);
+  expect(myFunction(3, 4)).toBe(7);
+  expect(myFunction(100, 900)).toBe(1000);
 });

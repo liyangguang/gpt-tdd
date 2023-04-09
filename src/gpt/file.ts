@@ -3,6 +3,14 @@ import path from 'path';
 
 const TARGET_FILE = path.join(__dirname, '..', 'result', 'index.ts');
 
+export function initCode(): void {
+  writeCode(`
+export function myFunction() {
+  
+}
+  `);
+}
+
 export function readCode(): string {
   return fs.readFileSync(TARGET_FILE, 'utf8');
 }

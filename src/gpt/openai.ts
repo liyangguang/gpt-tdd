@@ -7,7 +7,9 @@ export async function ask(failureMessage: string, currentCode: string): Promise<
   const completion = await openai.createChatCompletion({
     model: 'gpt-4',
     messages: [
-      {role: 'system', content: 'You are a typescript coding expert. You look at test failure message and the code, and knows how to fix it.'},
+      {role: 'system', content: `You are a typescript coding expert.
+          You look at test failure message and the code, and knows how to fix it.
+          You never talk to me, or chat with me. You only reply with code needed for the file.`},
       {role: 'user', content: `Here are the test failure message:
 
 ${failureMessage}
@@ -16,7 +18,8 @@ And here are the current code:
 
 ${currentCode}
       `},
-      {role: 'user', content: `What is the updated code to pass all tests? Reply with only the code, no preamble, no chatting.`},
+      {role: 'user', content: `What is the updated code to pass all tests?
+        Reply with only the code, no preamble, no chatting. Only modify the arguments and function body, don't touch the function name.`},
     ],
     temperature: 0,
   });
