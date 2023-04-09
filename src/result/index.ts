@@ -1,3 +1,4 @@
-export function add(a: number, b: number) {
-  return a - b;
+// Just create a blank function as the starting point. GPT will edit this file.
+export function add() {
+  
 }
