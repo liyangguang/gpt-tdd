@@ -1,0 +1,28 @@
+{
+  "name": "self-running-gpt-tdd",
+  "description": "Use GPT on Test-Driven-Development to automate coding",
+  "keywords": [
+    "gpt",
+    "openai",
+    "tdd"
+  ],
+  "author": "Yangguang Li <liyangguangcn@gmail.com> (https://liyangguang.com/)",
+  "homepage": "https://github.com/liyangguang/self-running-gpt-tdd#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liyangguang/self-running-gpt-tdd"
+  },
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vitest": "^0.29.8"
+  },
+  "dependencies": {
+    "openai": "^3.2.1"
+  }
+}
