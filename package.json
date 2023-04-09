@@ -16,7 +16,7 @@
   "type": "module",
   "scripts": {
     "start": "npx vite-node src/gpt/main.ts",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "typescript": "^4.9.3",

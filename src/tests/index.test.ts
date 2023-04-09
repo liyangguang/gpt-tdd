@@ -6,3 +6,7 @@ import {add} from '../result';
 test('TDD tests', () => {
   expect(add(3, 4)).toBe(7);
 });
+
+test('TDD tests', () => {
+  expect(add(1, 1)).toBe(2);
+});
